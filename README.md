@@ -1,6 +1,6 @@
 SIMPLE SHELL PROJECT
 
-Collaborators Lyde Latele Kholophe Rabelani
+Collaborators Lyde Latele and Kholophe Rabelani
 General Requirements for the Project
 
 Allowed editors: vi, vim, emacs
