@@ -1,0 +1,7 @@
+#!/bin/bash
+git add .
+read -p "Write your message:"
+msg
+git commit -m "$msg"
+git pull
+git push
