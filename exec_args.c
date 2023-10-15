@@ -1,3 +1,5 @@
+
+
 #include "shell.h"
 
 /**
@@ -17,21 +19,21 @@ int exec_cmd(char **args)
 	size_t i = 0;
 
 
-/*check if no args was passed*/
+	/*check if no args was passed*/
 
-		if (args[0] == NULL)
-		{
-			return (-1);
-		}
+	if (args[0] == NULL)
+	{
+		return (-1);
+	}
 
-/*check if command is inbuilt*/
-		for (; i < sizeof(builtin_funcs) / sizeof(char *); i++)
+	/*check if command is in built*/
+	for (; i < sizeof(builtin_funcs) / sizeof(char *); i++)
+	{
+		if (strcmp(args[0], builtin_funcs[i]) == 0)
 		{
-			if (strcmp(args[0], builtin_funcs[i]) == 0)
-			{
-				return ((*builtin_func[i])(args));
-			}
+			return ((*builtin_func[i])(args));
 		}
+	}
 	/* create a new process */
 	cmd_num++;
 	return (execute_cmd(args, cmd_num));
