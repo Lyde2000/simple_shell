@@ -12,7 +12,7 @@ int exec_cmd(char **args)
 	static int cmd_num;
 	char *builtin_funcs[] = {"env", "cd", "exit",};
 
-	int (builtin_func[])(char *) = {&env, &my_cd, &my_exit, NULL};
+	int (*builtin_func[])(char **) = {&env, &my_cd, &my_exit, NULL};
 
 	size_t i = 0;
 
@@ -24,7 +24,7 @@ int exec_cmd(char **args)
 		return (-1);
 	}
 
-	/*check if command is in built*/
+	/*check if command is inbuilt*/
 	for (; i < sizeof(builtin_funcs) / sizeof(char *); i++)
 	{
 		if (strcmp(args[0], builtin_funcs[i]) == 0)
